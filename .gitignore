@@ -24,3 +24,11 @@ components/src/components/icons/generated/
 !/.yarn/cache
 
 .idea
+
+# env files
+.env
+.env.*
+!.env.example
+
+# Claude Code
+.claude/
