@@ -12,6 +12,7 @@ export type Size = 'extraSmall' | 'small' | 'medium'
 
 export type CurrencyToggleProps = {
   size?: Size
+  crypto?: string
   fiat?: string
   color?: Color
 } & Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size' | 'height' | 'width'>
@@ -92,7 +93,7 @@ const Slider = ({
 
 export const CurrencyToggle = React.forwardRef<HTMLInputElement, CurrencyToggleProps>(
   (
-    { size = 'medium', color = 'accent', disabled, fiat = 'usd', ...props },
+    { size = 'medium', color = 'accent', crypto = 'ETH', disabled, fiat = 'usd', ...props },
     ref,
   ) => {
     const id = useId()
@@ -110,11 +111,11 @@ export const CurrencyToggle = React.forwardRef<HTMLInputElement, CurrencyToggleP
         <Slider $color={color} $size={size} />
         <Label
           $size={size}
-          className={styles.labelEth}
+          className={styles.labelCrypto}
           htmlFor={id}
-          id="eth"
+          id="crypto"
         >
-          ETH
+          {crypto.toLocaleUpperCase()}
         </Label>
         <Label
           $size={size}

@@ -2,7 +2,7 @@ import { globalStyle, style } from '@vanilla-extract/css'
 
 import { modeVars } from '@/src/css/theme.css'
 
-export const labelEth = style({
+export const labelCrypto = style({
   transform: 'translate(-100%, -50%)',
 })
 
@@ -29,7 +29,7 @@ globalStyle(`${checkbox}:disabled ~ ${slider}`, {
   backgroundColor: modeVars.color.greyPrimary,
 })
 
-globalStyle(`${checkbox}:checked ~ ${labelEth}`, {
+globalStyle(`${checkbox}:checked ~ ${labelCrypto}`, {
   color: modeVars.color.greyPrimary,
 })
 
