@@ -15,33 +15,33 @@
 }
 
 @font-face {
-  font-family: 'Satoshi';
-  src: url('/fonts/sans/Satoshi-Regular.woff2') format('woff2');
+  font-family: 'IBM Plex Mono';
+  src: url('/fonts/monospace/IBMPlexMono-Regular.woff2') format('woff2');
   font-weight: 400;
   font-display: swap;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Satoshi';
-  src: url('/fonts/sans/Satoshi-Medium.woff2') format('woff2');
+  font-family: 'IBM Plex Mono';
+  src: url('/fonts/monospace/IBMPlexMono-Medium.woff2') format('woff2');
   font-weight: 500;
   font-display: swap;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Satoshi';
-  src: url('/fonts/sans/Satoshi-Bold.woff2') format('woff2');
-  font-weight: 700;
+  font-family: 'IBM Plex Mono';
+  src: url('/fonts/monospace/IBMPlexMono-SemiBold.woff2') format('woff2');
+  font-weight: 600;
   font-display: swap;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Satoshi';
-  src: url('/fonts/sans/Satoshi-Black.woff2') format('woff2');
-  font-weight: 900;
+  font-family: 'IBM Plex Mono';
+  src: url('/fonts/monospace/IBMPlexMono-Bold.woff2') format('woff2');
+  font-weight: 700;
   font-display: swap;
   font-style: normal;
 }
