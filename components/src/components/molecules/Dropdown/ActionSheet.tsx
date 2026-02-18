@@ -61,10 +61,10 @@ type Props = {
   screenSize: number
   items: DropdownItem[]
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
-  DropdownChild: React.FC<{
+  DropdownChild: (props: {
     setIsOpen: (isOpen: boolean) => void
     item: React.ReactElement<React.PropsWithRef<unknown>>
-  }>
+  }) => React.ReactElement
   cancelLabel?: string
 }
 export const ActionSheet = React.forwardRef<HTMLDivElement, Props>(
@@ -81,7 +81,7 @@ export const ActionSheet = React.forwardRef<HTMLDivElement, Props>(
     >
       <ActionSheetContent ref={ref}>
         <ActionSheetOptions>
-          {items?.map((item) => {
+          {items?.map((item): React.ReactNode => {
             if (React.isValidElement(item)) {
               return DropdownChild({ item, setIsOpen })
             }

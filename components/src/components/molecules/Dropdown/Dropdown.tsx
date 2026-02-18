@@ -30,7 +30,7 @@ type Direction = 'down' | 'up'
 export type DropdownItemObject = {
   label: string
   onClick?: (value?: string) => void
-  wrapper?: (children: React.ReactNode, key: React.Key) => JSX.Element
+  wrapper?: (children: React.ReactNode, key: React.Key) => React.JSX.Element
   icon?: AsProp
   value?: string
   color?: Color
@@ -237,10 +237,10 @@ const MenuButton = React.forwardRef<HTMLElement, BoxProps & MenuButtonProps>(
   ),
 )
 
-const DropdownChild: React.FC<{
+const DropdownChild = ({ setIsOpen, item }: {
   setIsOpen: (isOpen: boolean) => void
   item: React.ReactElement<React.PropsWithRef<any>>
-}> = ({ setIsOpen, item }) => {
+}): React.ReactElement => {
   const ref = React.useRef<HTMLDivElement>(null)
   const Item = React.cloneElement(item, { ...item.props, ref })
 
@@ -276,7 +276,7 @@ const DropdownMenu = React.forwardRef<HTMLDivElement, DropdownMenuProps>(
     },
     ref,
   ) => {
-    const Content = items.map((item: DropdownItem) => {
+    const Content: React.ReactNode[] = items.map((item: DropdownItem) => {
       if (React.isValidElement(item)) {
         return DropdownChild({ item, setIsOpen })
       }
@@ -384,7 +384,7 @@ const Chevron = ({
 
 interface DropdownButtonProps {
   children?: React.ReactNode
-  buttonRef: React.RefObject<HTMLButtonElement>
+  buttonRef: React.RefObject<HTMLButtonElement | null>
   chevron: boolean
   direction: Direction
   isOpen: boolean

@@ -328,7 +328,7 @@ export const Toast: React.FC<ToastProps> = ({
   ...props
 }) => {
   const [popped, setPopped] = React.useState(false)
-  const currentTimeout = React.useRef<number | undefined>()
+  const currentTimeout = React.useRef<number | undefined>(undefined)
 
   React.useEffect(() => {
     const originalPopped = popped

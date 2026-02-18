@@ -2,7 +2,7 @@ import type { RefObject } from 'react'
 import { useEffect } from 'react'
 
 export const useDocumentEvent = (
-  ref: RefObject<HTMLElement>,
+  ref: RefObject<HTMLElement | null>,
   event: keyof DocumentEventMap,
   _callback: () => void,
   shouldCallback?: boolean,

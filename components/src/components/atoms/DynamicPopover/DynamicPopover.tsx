@@ -45,7 +45,7 @@ export type DynamicPopoverProps = {
   /** A function that returns string of the css state for open and closed popover */
   animationFn?: DynamicPopoverAnimationFunc
   /** The id of the target element the tooltip will emerge from */
-  anchorRef: React.RefObject<HTMLElement>
+  anchorRef: React.RefObject<HTMLElement | null>
   /** Function that will be called when the DynamicPopover is shown */
   onShowCallback?: () => void
   /** Width of the DynamicPopover */
@@ -221,7 +221,7 @@ export const DynamicPopover: React.FC<DynamicPopoverProps> = ({
   align = 'center',
   hideOverflow,
 }) => {
-  const popoverContainerRef = React.useRef<HTMLDivElement>()
+  const popoverContainerRef = React.useRef<HTMLDivElement>(null)
 
   const isControlled = isOpen !== undefined
 

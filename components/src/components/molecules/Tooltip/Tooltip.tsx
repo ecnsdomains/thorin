@@ -153,7 +153,7 @@ export const Tooltip: React.FC<TooltipProps> = ({
   // Setup anchor element
   const anchorRef = React.useRef<HTMLDivElement>(null)
   const child = React.Children.only(children)
-  const AnchorElement = React.cloneElement(child, { ref: anchorRef })
+  const AnchorElement = React.cloneElement(child, { ref: anchorRef } as React.Attributes & { ref: React.RefObject<HTMLDivElement | null> })
 
   const popover = content
     ? (
