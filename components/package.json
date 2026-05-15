@@ -57,7 +57,7 @@
     "happy-dom": "^16.7.1",
     "react": "^19",
     "react-dom": "^19",
-    "vite": "^6.0.7",
+    "vite": "6.4.2",
     "vite-plugin-dts": "^4.4.0",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "3.0.2"
